@@ -1,11 +1,12 @@
 
 import './App.scss'
+import Layout from './components/layout/layout'
 
 function App() {
 
   return (
     <>
-    <h1>slutprojekt</h1>
+    <Layout />
     </>
   )
 }
