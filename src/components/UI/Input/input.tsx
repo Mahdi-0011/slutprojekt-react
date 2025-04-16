@@ -1,4 +1,4 @@
-import Button from "../button/button"
+
 import "./input.scss"
 
 export default function Input() {
@@ -8,7 +8,7 @@ export default function Input() {
       type="text" 
       className="input"
       />
-    <Button />
+      <button className="btn">search</button>
     </div>
   )
 }

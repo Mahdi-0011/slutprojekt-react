@@ -6,7 +6,8 @@ function App() {
 
   return (
     <>
-    <Layout />
+      <Layout children={undefined}>
+      </Layout>
     </>
   )
 }
