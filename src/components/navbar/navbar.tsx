@@ -9,9 +9,8 @@ type NavLinkType= {
   }
 
 const navLink: NavLinkType[] = [
-  {name:"home", url:"/", id:"1"},
-  {name:"favorites", url:"/favorites", id:"2"},
-  {name:"about", url:"/about", id:"3"},
+  {name:"Home", url:"/", id:"1"},
+  {name:"Favorites", url:"/Favorites", id:"2"},
 ];
 export default function Navbar() {
   return (

@@ -1,7 +1,7 @@
 import "./home.scss"
 
-export default function home() {
+export default function Home() {
   return (
-    <div>home</div>
+    <div>Home</div>
   )
 }
