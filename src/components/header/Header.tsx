@@ -1,6 +1,7 @@
 // import { Link } from "react-router";
 import Navbar from "../navbar/navbar"
 import "./Header.scss"
+import logo from "../pictures/logo.avif"
 
 
 export default function Header() {
@@ -8,7 +9,9 @@ export default function Header() {
     <>
     <header className="header">
     <div className="logo-container">
-    <div className="logo">logo</div>
+    <img src={logo}
+     alt="logo" 
+     className="logo"/>
     </div>
     <nav className="navbar"><Navbar/></nav>
     </header>
