@@ -1,13 +1,13 @@
-.homepage{
+.homepage {
   display: flex;
   justify-content: center;
   justify-items: center;
   height: 100px;
-  .input-form{
+  .input-form {
     margin: 40px;
   }
 }
-.card-show{
+.card-show {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }

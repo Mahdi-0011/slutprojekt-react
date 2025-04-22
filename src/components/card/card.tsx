@@ -1,4 +1,4 @@
-import "./card.scss"
+import "./card.scss";
 
 export default function Card() {
   return (
@@ -6,5 +6,5 @@ export default function Card() {
       <h4>item.book</h4>
       <p></p>
     </div>
-  )
+  );
 }

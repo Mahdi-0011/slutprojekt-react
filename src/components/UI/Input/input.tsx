@@ -1,14 +1,10 @@
-
-import "./input.scss"
+import "./input.scss";
 
 export default function Input() {
   return (
     <div>
-      <input 
-      type="text" 
-      className="input"
-      />
+      <input type="text" className="input" />
       <button className="btn">search</button>
     </div>
-  )
+  );
 }
