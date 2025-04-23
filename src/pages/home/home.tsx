@@ -1,33 +1,34 @@
 import { useState } from "react";
-import Card from "../../components/card/card";
 import "./home.scss";
 import DataFetcher from "../../servies/api";
 
-const Search = (e: { preventDefault: () => void }) => {
-  e.preventDefault();
-};
-
 export default function Home() {
-  const [searchText, setSearchText] = useState("");
+  const [query, setQuery] = useState("");
+  const [searchBooks, setSearchBooks] = useState<string[]>([]);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (query.trim() !== "") {
+      setSearchBooks([...searchBooks, query]);
+      setQuery("");
+    }
+  };
+
   return (
     <>
       <div className="homepage">
-        <form action="input" className="input-form">
+        <form onSubmit={handleSearch} className="input-form">
           <input
             type="text"
             placeholder="search your book ..."
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
           />
-          <button onClick={Search}>search</button>
-          <p>u wrote: {searchText}</p>
+          <button type="submit">search</button>
+          <p>u wrote: {searchBooks}</p>
         </form>
       </div>
-      <div className="card-show">
-        <Card />
         <DataFetcher />
-      </div>
     </>
   );
 }
