@@ -1,10 +1,22 @@
 import "./card.scss";
 
-export default function Card() {
+type Book = {
+  title: string;
+  first_publish_year: number;
+  key: string;
+};
+
+type BookCardProps = {
+  book: Book;
+};
+
+const Card: React.FC<BookCardProps> = ({ book }) => {
   return (
     <div className="card">
-      <h4>item.book</h4>
-      <p></p>
+      <p><strong>Title:</strong> {book.title}</p>
+      <p><strong>First published:</strong> {book.first_publish_year}</p>
     </div>
   );
-}
+};
+
+export default Card;
