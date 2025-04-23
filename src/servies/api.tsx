@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
+import Card from '../components/card/card';
+import "./api.scss"
 
 type BookProps = {
-  author_key: string[],
-  author_name: string[],
-  cover_edition_key: string,
-  cover_i: number,
-  edition_count: number,
-  first_publish_year: number,
-  has_fulltext: boolean,
-}
+  title: string;
+  first_publish_year: number;
+  key: string;
+};
 
 const DataFetcher = () => {
   const [data, setData] = useState<BookProps[]>([]);
@@ -21,12 +19,12 @@ const DataFetcher = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://openlibrary.org/search.json?q=the+lord+of+the+rings');
+      const response = await fetch('https://openlibrary.org/search.json?q=${query}');
       if (!response.ok) {
         throw new Error('Network response was not ok.');
       }
       const data = await response.json();
-      setData(data.docs);
+      setData(data.docs.slice(0,10));
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -45,13 +43,11 @@ const DataFetcher = () => {
       ) : error ? (
         <p>Error: {error}</p>
       ) : (
-        <ul>
+        <div className='card-grid'>
           {data.map((item) => (
-            <li key={item.cover_edition_key}>
-              {item.author_name}
-            </li>
+            <Card key={item.key} book={item}/>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
