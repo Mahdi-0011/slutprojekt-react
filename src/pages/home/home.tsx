@@ -4,12 +4,12 @@ import DataFetcher from "../../servies/api";
 
 export default function Home() {
   const [query, setQuery] = useState("");
-  const [searchBooks, setSearchBooks] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState("")
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim() !== "") {
-      setSearchBooks([...searchBooks, query]);
+      setSearchTerm(query);
       setQuery("");
     }
   };
@@ -25,10 +25,9 @@ export default function Home() {
             onChange={(e) => setQuery(e.target.value)}
           />
           <button type="submit">search</button>
-          <p>u wrote: {searchBooks}</p>
         </form>
       </div>
-        <DataFetcher />
+        <DataFetcher searchTerm={searchTerm}/>
     </>
   );
 }
