@@ -6,8 +6,16 @@
   .input-form {
     margin: 40px;
   }
+  // .card-show {
+  //   display: grid;
+  //   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  //   gap: 1.5rem;
+  //   padding: 2rem;
+  //   max-width: 1200px;
+  //   margin: 0 auto;
+  // }
 }
-.card-show {
+.card-container{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 140px 14px 140px;
 }
