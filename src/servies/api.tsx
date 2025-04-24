@@ -1,16 +1,25 @@
-import { useEffect, useState } from 'react';
-import Card from '../components/card/card';
-import "./api.scss"
+/** @format */
+
+import { useEffect, useState } from "react";
+import Card from "../components/card/card";
+import "./api.scss";
 type searchTermProps = {
   searchTerm: string;
-}
+};
 type BookProps = {
+  cover_i: number;
+  has_fulltext: boolean;
+  edition_count: number;
   title: string;
+  author_name: string[];
   first_publish_year: number;
   key: string;
+  ia: string[];
+  author_key: string[];
+  public_scan_b: boolean;
 };
 
-const DataFetcher = ({searchTerm}: searchTermProps) => {
+const DataFetcher = ({ searchTerm }: searchTermProps) => {
   const [data, setData] = useState<BookProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -21,17 +30,19 @@ const DataFetcher = ({searchTerm}: searchTermProps) => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(searchTerm)}&sort=title`);
+      const response = await fetch(
+        `https://openlibrary.org/search.json?q=${encodeURIComponent(searchTerm)}&fields=title,author_name,first_publish_year,cover_i`
+      );
       if (!response.ok) {
-        throw new Error('Network response was not ok.');
+        throw new Error("Network response was not ok.")
       }
       const data = await response.json();
-      setData(data.docs.slice(0, 30));
+      setData(data.docs.slice(0, 24));
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
       } else {
-        setError("An unknown error occurred.");
+        setError("An unknown error occurred.")
       }
     } finally {
       setLoading(false);
@@ -47,7 +58,7 @@ const DataFetcher = ({searchTerm}: searchTermProps) => {
       ) : (
         <div className='card-grid'>
           {data.map((item) => (
-            <Card key={item.key} book={item}/>
+            <Card key={item.key} book={item} />
           ))}
         </div>
       )}
