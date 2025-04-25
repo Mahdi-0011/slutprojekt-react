@@ -1,12 +1,29 @@
 .card {
-  border: 2px solid gold;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
   width: 150px;
-  height: 300px;
-  justify-items: center;
-  justify-content: center;
-  padding: 6px;
-}
-.book-image{
-  width: 100px;
-  height: 120px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  .book-image {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .favorite-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
 }
