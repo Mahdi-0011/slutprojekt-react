@@ -1,8 +1,7 @@
 /** @format */
 
 import { useEffect, useState } from "react";
-import Card from "../components/card/card";
-import "./api.scss";
+import BookList from "../components/book-list/book-list";
 type searchTermProps = {
   searchTerm: string;
 };
@@ -56,11 +55,7 @@ const DataFetcher = ({ searchTerm }: searchTermProps) => {
       ) : error ? (
         <p>Error: {error}</p>
       ) : (
-        <div className='card-grid'>
-          {data.map((item) => (
-            <Card key={item.key} book={item} />
-          ))}
-        </div>
+        <BookList books={data} />
       )}
     </div>
   );
