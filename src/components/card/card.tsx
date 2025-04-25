@@ -23,7 +23,7 @@ const Card: React.FC<BookCardProps> = ({ book }) => {
       <button>❤️</button>
       <p><strong>Title:</strong> {book.title}</p>
       <p><strong>First published:</strong> {book.first_publish_year}</p>
-      <p><strong>your fulltext:</strong>{book.public_scan_b}</p>
+      <p><strong>Author name:</strong>{book.author_name}</p>
       <img 
       src={book.cover_i 
        ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` 
