@@ -5,6 +5,7 @@ import "./App.scss";
 import RootLayout from "./Rootlayout/Rootlayout";
 import Home from "./pages/home/home";
 import Favorites from "./pages/favorites/favorites";
+import ContextProvider from "./context/context";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
+    <ContextProvider>
       <RouterProvider router={router} />;
+    </ContextProvider>
     </>
   );
 }
