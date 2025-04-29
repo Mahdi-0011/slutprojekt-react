@@ -1,3 +1,4 @@
+import useGlobalContext from "../../customHooks/useGlobalContext";
 import "./card.scss";
 
 type Book = {
@@ -17,7 +18,19 @@ type BookCardProps = {
   book: Book;
 };
 
+
 const Card: React.FC<BookCardProps> = ({ book }) => {
+
+  const { state, dispatch } = useGlobalContext();
+  const isFavorite = state.Favorites.includes(book.cover_i);
+
+  const toggleFavorite = () => {
+    if (isFavorite)
+      dispatch({type: "remove favorite", payload: book.cover_i});
+    else {
+      dispatch({type: "add to favorite", payload: book.cover_i});
+  }};
+
   return (
     <div className="card">
             <img 
@@ -29,7 +42,9 @@ const Card: React.FC<BookCardProps> = ({ book }) => {
       />
       <br />
       <br />
-      <button className="favorite-btn">❤️</button>
+      <button className="favorite-btn" onClick={toggleFavorite}>
+        {isFavorite ? "💔 Remove" : "❤️ Favorite"}
+      </button>
       <br />
       <br />
       <h4>Title: {book.title}</h4>
