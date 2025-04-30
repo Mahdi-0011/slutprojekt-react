@@ -7,7 +7,6 @@
 //   payload: number;
 // }
 
-
 // export function Reducer(state: StateType, action: ActionType) {
 //   switch (action.type) {
 //     case 'add to favorite': {
