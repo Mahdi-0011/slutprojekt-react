@@ -4,7 +4,7 @@ import DataFetcher from "../../servies/api";
 
 export default function Home() {
   const [query, setQuery] = useState("");
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ export default function Home() {
           <button type="submit">search</button>
         </form>
       </div>
-        <DataFetcher searchTerm={searchTerm}/>
+      <DataFetcher searchTerm={searchTerm} />
     </>
   );
 }

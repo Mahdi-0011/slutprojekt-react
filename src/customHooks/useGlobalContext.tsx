@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../context/context";
 
-
 export default function useGlobalContext() {
   const context = useContext(GlobalContext);
   if (!context) {

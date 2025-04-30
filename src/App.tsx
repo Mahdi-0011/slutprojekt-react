@@ -20,9 +20,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-    <ContextProvider>
-      <RouterProvider router={router} />;
-    </ContextProvider>
+      <ContextProvider>
+        <RouterProvider router={router} />;
+      </ContextProvider>
     </>
   );
 }

@@ -1,6 +1,5 @@
 import Card from "../card/card";
-import "./book-list.scss"
-
+import "./book-list.scss";
 
 type BookProps = {
   cover_i: number;
