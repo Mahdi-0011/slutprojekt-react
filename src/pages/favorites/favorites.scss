@@ -3,7 +3,27 @@
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
   padding: 20px;
-  max-width: 1200px;
   margin: 10px;
+  width: 1200px;
   justify-items: center;
 }
+.favorite-card {
+  border: 1px solid #2c2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 150px;
+  text-align: center;
+  background-color: #93b89f;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  .book-image {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+  }}
