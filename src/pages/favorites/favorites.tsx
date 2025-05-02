@@ -10,10 +10,7 @@ export default function Favorites() {
   };
 
   return (
-    <div className="favorites-page">
-      {state.Favorites.length === 0 ? (
-        <p>No favorites yet 😢</p>
-      ) : (
+    <div>
         <div className="favorites-list">
           {state.Favorites.map((book) => (
             <div className="favorite-card" key={book.cover_i}>
@@ -28,7 +25,7 @@ export default function Favorites() {
               />
               <br />
               <br />
-              <button onClick={() => handleRemove(book)}>Remove</button>
+              <button onClick={() => handleRemove(book)}> 💔 </button>
               <br />
               <br />
               <h4>{book.title}</h4>
@@ -43,7 +40,6 @@ export default function Favorites() {
             </div>
           ))}
     </div>
-      )}
     </div>
   );
 }
