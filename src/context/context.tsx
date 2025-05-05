@@ -3,8 +3,6 @@
 import { createContext, useReducer } from "react";
 import { ActionType, Reducer, StateType } from "../Reducer/FavoriteReducer";
 
-
-
 type ContextType = {
   state: StateType;
   dispatch: React.Dispatch<ActionType>;
@@ -12,7 +10,6 @@ type ContextType = {
 const initialState: StateType = {
   Favorites: [],
 };
-
 
 export const GlobalContext = createContext<ContextType | undefined>(undefined);
 

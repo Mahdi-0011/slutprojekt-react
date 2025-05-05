@@ -17,7 +17,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   transition: transform 0.2s ease;
   margin: 20px;
-  .favorite-btn{
+  .favorite-btn {
     background-color: #93b89f;
     border: #93b89f;
     &:hover {
@@ -34,14 +34,15 @@
     height: 120px;
     object-fit: cover;
     border-radius: 5px;
-  }}
+  }
+}
 
-  .rating-input{
-    width: 70PX;
-  }
-  .numberofpages-inout{
-    width: 70px;
-  }
-  .review-inout{
-    width: 100px;
-  }
+.rating-input {
+  width: 70px;
+}
+.numberofpages-inout {
+  width: 70px;
+}
+.review-inout {
+  width: 100px;
+}

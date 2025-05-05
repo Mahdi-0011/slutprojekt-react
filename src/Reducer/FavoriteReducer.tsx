@@ -1,4 +1,3 @@
-
 import { BookType } from "../Types/BookType";
 
 export type StateType = {
@@ -8,7 +7,6 @@ export type ActionType = {
   type: "add to favorite" | "remove favorite";
   payload: BookType;
 };
-
 
 export function Reducer(state: StateType, action: ActionType) {
   switch (action.type) {
