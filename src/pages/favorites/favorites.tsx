@@ -10,7 +10,17 @@ export default function Favorites() {
   };
 
   type HandleCheckboxOnChange = () => void;
+  type handelReviewChangeType = (e: React.ChangeEvent<HTMLInputElement>) => void;
+
+
   const handleCheckboxOnChange: HandleCheckboxOnChange = () => {};
+  const handelReviewChange: handelReviewChangeType = (e) => {
+    dispatch({ type: "set ReviewDraft", payload: e.target.value});
+  };
+  const HandelClickReview = () => {
+    dispatch({ type: "set Review", payload: state.ReviewDraft});
+    dispatch({ type: "set ReviewDraft", payload: ""});
+  };
 
   return (
     <div>
@@ -18,7 +28,7 @@ export default function Favorites() {
         <h4>
           Books you read: {"lord of the rings, hello"}___how many books:{5}
         </h4>
-        <h4>pages you read: {5}</h4>
+        <h4>pages you read: {state.Review}</h4>
       </div>
       <div className="favorites-list">
         {state.Favorites.map((book) => (
@@ -40,8 +50,7 @@ export default function Favorites() {
               <strong>First published:</strong> {book.first_publish_year}
             </p>
             <button onClick={() => handleRemove(book)} className="favorite-btn">
-              {" "}
-              💔{" "}
+              💔
             </button>
             <div>
               <div>
@@ -67,9 +76,11 @@ export default function Favorites() {
                   type="text"
                   placeholder=" Review ..."
                   className="review-inout"
+                  value={state.ReviewDraft}
+                  onChange={handelReviewChange}
                 />
               </div>
-              <button>save</button>
+              <button onClick={HandelClickReview}>save</button>
               <button>Delete</button>
               <button>Edite</button>
             </div>
