@@ -7,7 +7,7 @@ import "./Rootlayout.scss";
 
 export default function RootLayout() {
   return (
-    <div>
+    <div className="app-container">
       <Header />
       <Main />
       <Footer />
