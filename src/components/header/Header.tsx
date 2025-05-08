@@ -1,7 +1,7 @@
 // import { Link } from "react-router";
 import Navbar from "../navbar/navbar";
 import "./Header.scss";
-import logo from "../pictures/logo.avif";
+import logo from "../pictures/logo.jpg";
 
 export default function Header() {
   return (
