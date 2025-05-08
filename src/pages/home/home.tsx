@@ -17,6 +17,7 @@ export default function Home() {
   return (
     <>
       <div className="homepage">
+        <div className="banner">
         <form onSubmit={handleSearch} className="input-form">
           <input
             type="text"
@@ -26,6 +27,7 @@ export default function Home() {
           />
           <button type="submit">search</button>
         </form>
+        </div>
       </div>
       <DataFetcher searchTerm={searchTerm} />
     </>

@@ -1,21 +1,38 @@
+
 .homepage {
   display: flex;
   justify-content: center;
-  justify-items: center;
-  height: 100px;
-  .input-form {
-    margin: 40px;
+  align-items: center;
+  height: 300px;
+  .banner {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-image: url("../../components/pictures/Banner.jpg");
+    background-size: cover;
+    background-position: center;
+
+    .input-form {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 100px;
+
+      input {
+        padding: 5px 10px;
+      }
+
+      button {
+        padding: 5px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
   }
-  // .card-show {
-  //   display: grid;
-  //   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  //   gap: 1.5rem;
-  //   padding: 2rem;
-  //   max-width: 1200px;
-  //   margin: 0 auto;
-  // }
-}
-.card-container {
-  display: grid;
-  grid-template-rows: 140px 14px 140px;
 }
