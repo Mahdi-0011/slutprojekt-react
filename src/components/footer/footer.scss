@@ -1,15 +1,17 @@
+
 .footer {
   border: 2px solid rgb(122, 162, 231);
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(196, 237, 237);
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   background-color: rgb(146, 206, 196);
   color: rgb(0, 0, 0);
+  margin-bottom: -20px;
+ 
+
+  
   .contact {
     flex: 1;
     height: 50px;
@@ -23,5 +25,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media (max-width: 720px){
+    margin-bottom: -20px;
+    .contact{
+      flex: 1;
+    }
+    .about{
+      flex: 1;
+    }
   }
 }
