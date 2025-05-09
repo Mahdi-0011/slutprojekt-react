@@ -1,6 +1,7 @@
 import "./favorites.scss";
 import useGlobalContext from "../../customHooks/useGlobalContext";
 import { BookType } from "../../Types/BookType";
+import Input from "../../components/input/input";
 
 export default function Favorites() {
   const { state, dispatch } = useGlobalContext();
@@ -9,18 +10,18 @@ export default function Favorites() {
     dispatch({ type: "remove favorite", payload: book });
   };
 
-  type HandleCheckboxOnChange = () => void;
-  type handelReviewChangeType = (e: React.ChangeEvent<HTMLInputElement>) => void;
+  // type HandleCheckboxOnChange = () => void;
+  // type handelReviewChangeType = (e: React.ChangeEvent<HTMLInputElement>) => void;
 
 
-  const handleCheckboxOnChange: HandleCheckboxOnChange = () => {};
-  const handelReviewChange: handelReviewChangeType = (e) => {
-    dispatch({ type: "set ReviewDraft", payload: e.target.value});
-  };
-  const HandelClickReview = () => {
-    dispatch({ type: "set Review", payload: state.ReviewDraft});
-    dispatch({ type: "set ReviewDraft", payload: ""});
-  };
+  // const handleCheckboxOnChange: HandleCheckboxOnChange = () => {};
+  // const handelReviewChange: handelReviewChangeType = (e) => {
+  //   dispatch({ type: "set ReviewDraft", payload: e.target.value});
+  // };
+  // const HandelClickReview = () => {
+  //   dispatch({ type: "set Review", payload: state.ReviewDraft});
+  //   dispatch({ type: "set ReviewDraft", payload: ""});
+  // };
 
   return (
     <div>
@@ -52,7 +53,8 @@ export default function Favorites() {
             <button onClick={() => handleRemove(book)} className="favorite-btn">
               💔
             </button>
-            <div>
+            <Input />
+            {/* <div>
               <div>
                 Read:
                 <input type="checkbox" onChange={handleCheckboxOnChange} />
@@ -83,7 +85,7 @@ export default function Favorites() {
               <button onClick={HandelClickReview}>save</button>
               <button>Delete</button>
               <button>Edite</button>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>
