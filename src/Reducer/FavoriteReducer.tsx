@@ -3,14 +3,14 @@ import { BookType } from "../Types/BookType";
 
 export type StateType = {
   Favorites: BookType[];
-  ReviewDraft: string;
-  Review: string;
+  // ReviewDraft: string;
+  // Review: string;
 };
 export type ActionType = 
 | { type: "add to favorite"; payload: BookType } 
 | { type: "remove favorite"; payload: BookType } 
-| { type: "set ReviewDraft"; payload: string }  
-| { type: "set Review"; payload: string }; 
+// | { type: "set ReviewDraft"; payload: string }  
+// | { type: "set Review"; payload: string }; 
 
 
 export function Reducer(state: StateType, action: ActionType) {
@@ -29,19 +29,19 @@ export function Reducer(state: StateType, action: ActionType) {
         ),
       };
     }
-    case "set ReviewDraft": {
-      return {
-        ...state,
-        ReviewDraft: action.payload,
-      };
-    }
-    case "set Review": {
-      return {
-        ...state,
-        Review: action.payload,
-      };
-    }
+    // case "set ReviewDraft": {
+    //   return {
+    //     ...state,
+    //     ReviewDraft: action.payload,
+    //   };
+    // }
+    // case "set Review": {
+    //   return {
+    //     ...state,
+    //     Review: action.payload,
+    //   };
+    // }
     default:
-      throw Error("Unknown action: " + action);
+      throw Error("Unknown action: ");
   }
 }

@@ -11,11 +11,11 @@ type ContextType = {
 
 const initialState: StateType = {
   Favorites: [],
-  ReviewDraft: "",
-  Review: "",
+  // ReviewDraft: "",
+  // Review: "",
 };
 
-export const GlobalContext = createContext<ContextType | undefined>(undefined);
+export const GlobalContext = createContext <ContextType | undefined>(undefined);
 
 type ChildrenType = {
   children: React.ReactNode;

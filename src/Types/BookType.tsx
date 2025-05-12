@@ -9,5 +9,5 @@ export type BookType = {
   ia: string[];
   author_key: string[];
   public_scan_b: boolean;
-  ReviewDraft?: string;
+  // ReviewDraft?: string;
 };
