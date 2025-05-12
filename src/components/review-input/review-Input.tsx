@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent } from "react";
+import "./review-Input.scss"
 
 const Input: React.FC = () => {
   const [input, setInput] = useState<string>("");
@@ -37,27 +38,27 @@ const Input: React.FC = () => {
 
   return (
     <>
+    <div><p>{comments}</p></div>
       <div>
         <div className="input-container">
           <input
             type="text"
             className="input"
-            placeholder="  comment..."
+            placeholder="  Review..."
             value={input}
             onChange={handleChange}
           />
           <button type="button" onClick={addComment}>
             {isEditingIndex !== null ? "Update" : "Add"}
           </button>
-        </div>
-
-        {comments.map((comment, index) => (
+          {comments.map((comment, index) => (
           <div key={index} className="input-container">
-            <p>{comment}</p>
             <button type="button" onClick={() => editComment(index)}>Edit</button>
             <button type="button" onClick={() => removeComment(index)}>Remove</button>
           </div>
         ))}
+        </div>
+
       </div>
     </>
   );

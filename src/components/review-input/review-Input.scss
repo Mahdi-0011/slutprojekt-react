@@ -1,0 +1,15 @@
+.input-container{
+  justify-items: center;
+  .input{
+    width: 100px;
+    border: 2px solid gold;
+  }
+}
+
+@media(max-width: 1024px){
+  .input-container{
+    .input{
+      width: 100px;
+    }
+  }
+}
