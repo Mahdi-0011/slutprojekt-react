@@ -1,7 +1,10 @@
+/** @format */
+
 import "./favorites.scss";
-import useGlobalContext from "../../customHooks/useGlobalContext";
+import useGlobalContext from "../../Hooks/useGlobalContext";
 import { BookType } from "../../Types/BookType";
-import Input from "../../components/input/input";
+import Input from "../../components/review-input/review-Input";
+import RatingInput from "../../components/Rating-Input/Rating";
 
 export default function Favorites() {
   const { state, dispatch } = useGlobalContext();
@@ -12,7 +15,6 @@ export default function Favorites() {
 
   // type HandleCheckboxOnChange = () => void;
   // type handelReviewChangeType = (e: React.ChangeEvent<HTMLInputElement>) => void;
-
 
   // const handleCheckboxOnChange: HandleCheckboxOnChange = () => {};
   // const handelReviewChange: handelReviewChangeType = (e) => {
@@ -26,22 +28,23 @@ export default function Favorites() {
   return (
     <div>
       <div>
+      <h4>Your favorite books: {"tittle"},{state.Favorites.length}</h4>
         <h4>
-          Books you read: {"lord of the rings, hello"}___how many books:{5}
+          Books you read: {"The old man and the sea"},{"1"}
         </h4>
-        <h4>pages you read: {state.Review}</h4>
+        <h4>pages you read: {"78"}</h4>
       </div>
-      <div className="favorites-list">
+      <div className='favorites-list'>
         {state.Favorites.map((book) => (
-          <div className="favorite-card" key={book.cover_i}>
+          <div className='favorite-card' key={book.cover_i}>
             <img
               src={
                 book.cover_i
                   ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
                   : "/images/placeholder.jpg"
               }
-              alt="book-cover"
-              className="book-image"
+              alt='book-cover'
+              className='book-image'
             />
             <h4>{book.title}</h4>
             <p>
@@ -50,10 +53,11 @@ export default function Favorites() {
             <p>
               <strong>First published:</strong> {book.first_publish_year}
             </p>
-            <button onClick={() => handleRemove(book)} className="favorite-btn">
+            <button onClick={() => handleRemove(book)} className='favorite-btn'>
               💔
             </button>
             <Input />
+            <RatingInput />
             {/* <div>
               <div>
                 Read:
