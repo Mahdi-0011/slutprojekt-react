@@ -38,7 +38,18 @@ const Input: React.FC = () => {
 
   return (
     <>
-    <div><p>{comments}</p></div>
+      <div>
+        {comments.map((comment, index) => (
+          <div key={index}>
+            <p>{comment}</p>
+            <div className="input-container">
+              <button type="button" onClick={() => editComment(index)}>Edit</button>
+              <button type="button" onClick={() => removeComment(index)}>Remove</button>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div>
         <div className="input-container">
           <input
@@ -51,14 +62,7 @@ const Input: React.FC = () => {
           <button type="button" onClick={addComment}>
             {isEditingIndex !== null ? "Update" : "Add"}
           </button>
-          {comments.map((comment, index) => (
-          <div key={index} className="input-container">
-            <button type="button" onClick={() => editComment(index)}>Edit</button>
-            <button type="button" onClick={() => removeComment(index)}>Remove</button>
-          </div>
-        ))}
         </div>
-
       </div>
     </>
   );
