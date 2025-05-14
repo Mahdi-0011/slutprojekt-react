@@ -8,9 +8,6 @@
   width: 100%;
   background-color: rgb(146, 206, 196);
   color: rgb(0, 0, 0);
-  margin-bottom: -20px;
- 
-
   
   .contact {
     flex: 1;
@@ -27,7 +24,6 @@
     align-items: center;
   }
   @media (max-width: 720px){
-    margin-bottom: -20px;
     .contact{
       flex: 1;
     }
