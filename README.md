@@ -13,7 +13,7 @@ Se projektet live här:
 
 ---
 
-## Funktioner
+## Funktionaliteter
 
 - Sök efter böcker via OpenLibrary API  
 - Favoritmarkera och ta bort böcker från favoritlistan  
@@ -40,7 +40,7 @@ Se projektet live här:
 
 1. Klona repo:  
    ```bash
-   git clone https://github.com/ditt-användarnamn/slutprojekt-react-f24.git
+   git clone https://github.com/Mahdi-0011/slutprojekt-react.git
    ```
 2. Gå till projektmappen:  
    ```bash
@@ -55,20 +55,14 @@ Se projektet live här:
    npm run dev
    ```
 5. Öppna i webbläsaren:  
-   [http://localhost:3000](http://localhost:3000)
+   [➜  Local:   http://localhost:5173/]
 
 ---
 
 ## Projektstruktur
 
 ```
-src/
-├── components/      # Återanvändbara React-komponenter
-├── pages/           # Sidor som Home och Favorite
-├── context/         # State management (Context + Reducer)
-├── styles/          # SCSS-filer för styling
-├── App.tsx          # Huvudkomponent
-└── main.tsx         # Appens startpunkt
+![alt text](image.png)
 ```
 
 ---
@@ -80,6 +74,3 @@ Maj 2025
 
 ---
 
-## Licens
-
-Det här projektet är licensierat under MIT License.
