@@ -62,7 +62,20 @@ Se projektet live här:
 ## Projektstruktur
 
 ```
-![alt text](image.png)
+src/
+├── components/
+├── context/
+├── Hooks/
+├── pages/
+├── Reducer/
+├── Rootlayout/
+├── servies/
+├── Types/
+├── App.scss
+├── App.tsx
+├── index.scss
+└── main.tsx
+
 ```
 
 ---
